@@ -27,6 +27,14 @@ public class FizzBuzzTest {
     }
 
     @Test
+    void toReturnFIZZBUZZWhenInputIsDivisibleByBothThreeAndFive(){
+        String expectedValue = "FIZZBUZZ";
+
+        String actualValue = fizzBuzzObject.checkFizzBuzz(15);
+
+        assertEquals(expectedValue,actualValue);
+    }
+    @Test
     void toReturnTheNumberWhenInputNumberIsNeitherDivisibleByThreeNorFive(){
         String expectedValue = "17";
 
@@ -44,6 +52,41 @@ public class FizzBuzzTest {
         assertThrows(IllegalArgumentException.class,()->fizzBuzzObject.checkFizzBuzz(121));
     }
 
+    @Test
+    void toReturnFIZZWhenInputContainsThree(){
+        String expectedValue = "FIZZ";
+
+        String actualValue = fizzBuzzObject.checkFizzBuzz(23);
+
+        assertEquals(expectedValue,actualValue);
+    }
+
+    @Test
+    void toReturnBUZZWhenInputContainsFive(){
+        String expectedValue = "BUZZ";
+
+        String actualValue = fizzBuzzObject.checkFizzBuzz(56);
+
+        assertEquals(expectedValue,actualValue);
+    }
+
+    @Test
+    void toReturnFIZZWhenInputContainsFiveOrDivisibleByThree(){
+        String expectedValue = "FIZZ";
+
+        String actualValue = fizzBuzzObject.checkFizzBuzz(57);
+
+        assertEquals(expectedValue,actualValue);
+    }
+
+    @Test
+    void toReturnFIZZWhenInputContainsThreeOrDivisibleByFive(){
+        String expectedValue = "FIZZ";
+
+        String actualValue = fizzBuzzObject.checkFizzBuzz(35);
+
+        assertEquals(expectedValue,actualValue);
+    }
 
 
 
